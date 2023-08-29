@@ -1,0 +1,11 @@
+#contenedor{
+    border: 2px solid red;
+    width: 500px;
+    height: 300px;
+    padding: 30px;
+}
+.form-group{
+    width: 400px;
+    height: auto;
+    margin: 10px auto;
+}
