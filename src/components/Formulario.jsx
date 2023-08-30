@@ -32,13 +32,12 @@ function Formulario(){
 
 
     }
-    //Función para actualizar la tarea
-    const cambiarTarea = (index) => {
-        const todasTareas = [...tareas];
-    
-        todasTareas[index].completa = !todasTareas[index].completa;
-        setTareas(todasTareas);
-    }
+           //Función para actualizar la tarea
+       const cambiarTarea = (tarea) => {
+        console.log(tarea);
+        setTareas(tarea);
+     }
+ 
     //Se toma el valor de lo que el usuario escriba en cada input y se manda a un useState
     const manejarFormulario = ({target: {name, value}})=>{
 
@@ -75,7 +74,7 @@ function Formulario(){
 
         </div>
 
-        <Mostrar_datos tareas={tareas} actualizarTarea={cambiarTarea} />
+        <Mostrar_datos tareas={tareas} actualizar={cambiarTarea}/>
 
           
         </>

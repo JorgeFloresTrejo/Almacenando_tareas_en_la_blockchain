@@ -1,17 +1,19 @@
 import React from "react";
+import './mostrar_datos.css'
 
-function Mostrar_datos({tareas, actualizarTarea}){
+function Mostrar_datos({tareas, actualizar}){
 
-      const cambiarEstadoTarea = (index) => {
+        const cambiarEstadoTarea = (index) => {
         const nuevasTareas = [...tareas];
         nuevasTareas[index].completa = !nuevasTareas[index].completa; 
-        actualizarTarea(nuevasTareas);
+        actualizar(nuevasTareas);
     };
+
     
     return(
         <>
 
-                <div>
+                <div id="contenedor">
                     <h2>Tareas Agregadas:</h2>
                 <ul>
                     {tareas.map((tarea, index) => (
@@ -20,7 +22,7 @@ function Mostrar_datos({tareas, actualizarTarea}){
                         <b>Titulo:</b> {tarea.titulo}, 
                         <b>Descripción:</b> {tarea.descripcion}
                         <div className="form-check form-switch">
-                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={tarea.completa} onChange={() => cambiarEstadoTarea(index)}/>
+                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={tarea.completa} onChange={(e) => cambiarEstadoTarea(index)}/>
                         <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Checked switch checkbox input</label>
                         </div>
                     </li>
